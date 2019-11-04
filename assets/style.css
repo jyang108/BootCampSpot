@@ -1,0 +1,12 @@
+main {
+    width: 960px;
+    overflow: auto;
+}
+body {
+    background-color: #808080;
+}
+
+.card {
+    width: 286px;
+    
+}

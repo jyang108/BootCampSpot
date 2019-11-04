@@ -1,0 +1,1 @@
+This is a random password generator useful for those who need frequent password changes that are secure and customizable: with options for lowercase and uppercase letters, numbers, special characters, and password lengths from 8 through 128. 

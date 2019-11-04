@@ -1,0 +1,96 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1;
+}
+
+textarea{
+  background: transparent;
+  border: none;
+  resize: none;
+  color: #000000;
+  border-left: 1px solid black;
+  padding: 10px;
+  width: 100%;
+}
+
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+  color: black;
+  border-radius: 0;
+  border-bottom: 10px solid black;
+}
+
+.description{
+  white-space: pre-wrap;
+}
+
+.time-block{
+  text-align: center;
+  border-radius: 15px;
+}
+
+.row {
+  white-space: pre-wrap;
+  height: 80px;
+  border-top: 1px solid white;;
+}
+
+.hour {
+  background-color: #ffffff;
+  color: #000000;
+  border-top: 1px dashed #000000;
+  padding-top: 25px;
+}
+
+.past {
+  border-left: 3px solid #797777;
+  background-color: #d3d3d3;
+}
+
+.present {
+  border-left: 3px solid #61ffe5;
+  background-color: #e0fffa;  
+}
+
+.future {
+  border-left: 3px solid #77dd77;
+  background-color: #e8ffe8;
+}
+
+.past:hover {
+  border-left: 7px solid #797777;
+  transition: all .5s ease-in-out;
+}
+.present:hover {
+  border-left: 7px solid #61ffe5;
+  transition: all .5s ease-in-out;
+}
+.future:hover {
+  border-left: 7px solid #77dd77;
+  transition: all .5s ease-in-out;
+}
+
+.saveBtn {
+  border-left: 1px solid black;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  background-color: #06AED5;
+  color: white;
+}
+
+.saveBtn:hover {
+  font-size: 25px;
+  transition: all .3s ease-in-out;
+}
+
+@media only screen and (max-width: 766px) {
+.time-block {
+  margin-top: 3rem;
+}
+#clearBtn {
+  margin-top: 2rem;
+}
+
+}

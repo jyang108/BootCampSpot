@@ -1,0 +1,134 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    color: #777777;
+}
+
+body {
+    background-image: url("../images/dot-grid.png");
+    background-color: #cccccc;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+h1, h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+header {
+    padding: 0%;
+    margin: 0%;
+    border-style: solid;
+    background-color: #ffffff;
+    width: 100%;
+    height: 89px;
+    border-width: 0px 0px 1px 0px;
+    border-color: #cccccc;
+
+}
+
+#navarea {
+    margin: auto;
+    width: 960px;
+    top: 0px;
+    margin-top: 0%;
+    position: relative;
+
+}
+
+#name {
+    background-color: #4aaaa5;
+    color: #ffffff;
+    float:left;
+    padding: 5px 30px;
+    
+}
+
+nav {
+    float: right;
+    margin-top: 50px;
+
+
+}
+
+#borderednav {
+    border-style: solid;
+    border-width: 0px 1px;
+    border-color: #eeeeee;
+
+}
+
+a {
+    text-decoration: none;
+    float: left;
+    color: #777777;
+    text-align: center;
+    width: 100px;
+    padding-top: 12px;
+    height: 28px;
+}
+
+a.navlinks:hover {
+    background-color: #eeeeee;
+    color: #ffffff;
+
+}
+
+a.navlinks:active {
+    background-color: #cccccc;
+
+}
+
+
+main {
+    margin: auto;
+    width: 960px;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #cccccc;
+    position: relative;
+    top: 80px;
+    padding: 0px;
+
+}
+
+
+#sectionhead {
+    border-bottom: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #dddddd;
+    margin: 40px 30px 0px 30px;
+}
+
+#contentsection {
+    margin: 0px 30px 40px 30px;
+
+}
+
+#portfoliomain {
+    height: 1000px;
+    
+}
+
+.portfolio {
+    float: left;
+    margin: 20px 55px 50px 0px;
+    width: 250px;
+    height: 200px;
+
+}
+
+.pnav {
+    background-color: #4aaaa5;
+    color: #ffffff;
+    height: 50px;
+    margin-top: 140px;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+
+}
