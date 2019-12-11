@@ -2,7 +2,7 @@ const inquirer = require("inquirer");
 const mysql = require("mysql");
 const consoleTable = require("console.table");
 
-// const prompt = require("./prompt");
+
 var PORT = process.env.PORT || 8080;
 
 const connection = mysql.createConnection({
