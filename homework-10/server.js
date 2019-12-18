@@ -24,10 +24,10 @@ connection.connect(function (err) {
 
 
 function determineAction() {
-    inquirer.prompt(
+    inquirer.prompt([
         {
             type: "list",
-            name: "choices",
+            name: "choice",
             message: "What would you like to do?",
             choices: [
                 {
@@ -62,35 +62,36 @@ function determineAction() {
                     name: "Quit",
                     value: "quit"
                 }
-            ]
-        }).then(function (option) {
-            switch (option) {
-                case "addEmployee":
-                    addEmployee();
-                    break;
-                case "viewAll":
-                    viewAll();
-                    break;
-                case "updateRole":
-                    updateRole();
-                    break;
-                case "viewAllRoles":
-                    viewAllRoles();
-                    break;
-                case "addRole":
-                    addRole();
-                    break;
-                case "viewAllDpt":
-                    viewAllDpt();
-                    break;
-                case "addDept":
-                    addDpt();
-                    break;
-                case "quit":
-                    connection.end();
-                    break;
-            }
-        });
+            ];
+            
+            ]).then(answers => {
+                switch (answers) {
+                    // case "addEmployee":
+                    //     addEmployee();
+                    //     break;
+                    case "viewAll":
+                        viewAll();
+                        break;
+                    // case "updateRole":
+                    //     updateRole();
+                    //     break;
+                    // case "viewAllRoles":
+                    //     viewAllRoles();
+                    //     break;
+                    // case "addRole":
+                    //     addRole();
+                    //     break;
+                    // case "viewAllDpt":
+                    //     viewAllDpt();
+                    //     break;
+                    // case "addDept":
+                    //     addDpt();
+                    //     break;
+                    case "quit":
+                        connection.end();
+                        break;
+                }
+            });
 
 };
 
@@ -98,10 +99,11 @@ function determineAction() {
 
 function viewAll() {
     let sql = "SELECT first_name AS FirstName , last_name as LastName , role.title as Role, role.salary AS Salary, department.name AS Department FROM employee INNER JOIN department ON department.id = employee.role_id left JOIN role ON role.id = employee.role_id";
-    connection.query(sql, function (err, results) {
-        console.table(results);
+    connection.query(sql, function (err, res) {
         if (err) throw err;
-        
+        console.log(res);
+        console.table(res);
+
     });
     determineAction()
 }

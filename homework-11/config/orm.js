@@ -19,7 +19,13 @@ var orm = {
         });
     },
 
-    updateOne: function()
+    updateOne: function (tableInput, colToInsert, updateVal, rowId, id, cb) {
+        const queryString = "UPDATE ?? SET ?? = ?? where ?? = ??";
+        connection.query(queryString, [tableInput, colToInsert, updateVal, rowId, id], function (err, result) {
+            if (err) throw err;
+            cb(result);
+        })
+    }
 };
 
 

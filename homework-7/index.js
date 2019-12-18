@@ -4,6 +4,7 @@ const util = require("util");
 const axios = require("axios");
 
 const writeFileAsync = util.promisify(fs.writeFile);
+const readFileAsync = util.promisify(fs.readFile);
 
 function promptUser() {
   return inquirer.prompt([
@@ -19,18 +20,8 @@ function promptUser() {
     },
     {
       type: "input",
-      name: "location",
-      message: "Enter your location as City, State"
-    },
-    {
-      type: "input",
       name: "username",
       message: "Enter your GitHub username"
-    },
-    {
-      type: "input",
-      name: "linkedin",
-      message: "Enter your LinkedIn URL"
     },
   ]);
 }
@@ -55,7 +46,7 @@ function generateHTML(answers, res) {
           }
           .jumbotron,
           .info {
-              background-color: #f17362;
+              background-color: ${favoriteColor};
           }
           body,
           a {
@@ -102,9 +93,9 @@ function generateHTML(answers, res) {
               <div id="nav">
                   <div class="table">
                       <ul id="horizontal-list">
-                          <li><a href="">${answers.location}</a></li>
-                          <li><a href="${res.data.url}">GitHub</a></li>
-                          <li><a href="${answers.linkedin}">LinkedIn</a></li>
+                          <li><a href=""></a></li>
+                          <li><a href="">GitHub</a></li>
+                          <li><a href="">LinkedIn</a></li>
                       </ul>
                   </div>
               </div>
@@ -112,7 +103,7 @@ function generateHTML(answers, res) {
           <br>
           <div>
               <div>
-                  <h3 style="color: black;">${res.data.bio}</h3>
+                  <h3 style="color: black;"></h3>
               </div>
               <br>
               <div id="firstRow">
@@ -139,7 +130,6 @@ function generateHTML(answers, res) {
           </div>
       </div>
   </body>
-  
   </html>`
 }
 
@@ -151,7 +141,7 @@ async function init() {
 
     const res = github(answers);
 
-    const html = generateHTML(answers, res);
+    const html = generateHTML(answers,);
 
     await writeFileAsync("index.html", html);
 
@@ -164,14 +154,16 @@ async function init() {
 function github(answers) {
   const queryUrl = `https://api.github.com/users/${answers.username}`
 
-  return axios.get(queryUrl)
+  axios.get(queryUrl)
     .then(function (res) {
       console.log(res.data.url);
       console.log(res.data.bio);
       console.log(res.data.avatar_url);
 
-
     });
+
+
+    
 };
 
 init();
